@@ -7,18 +7,13 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 <code style="color : black">**LPUF-AuthNet**</code>, which combines <code style="color : black">**tandem neural networks**</code>, <code style="color : black">**Deep neural networks**</code>, and <code style="color : black">**autoencoders**</code> within a <code style="color : black">**split learning framework**</code>. The proposed architecure reduces storage and communication demands, provides mutual authentication, enhances security by resisting different types of attacks, and supports scalable authentication, paving the way for secure integration into future 6G technologies.
 
 
-<div style="text-align: center;">
-  <img src="[https://example.com/image.jpg](https://github.com/user-attachments/assets/7fed8979-055b-4589-bb5f-e6dca86458fc)" alt="Diagram of LPUF-AuthNet architecture" style="width:70%;">
-  <br>
-  <figcaption>Figure 1: The architecture of LPUF-AuthNet showing the neural network structure.</figcaption>
-</div>
 
 ![One](https://github.com/user-attachments/assets/7fed8979-055b-4589-bb5f-e6dca86458fc)
-<figcaption>Figure 1: Enrollment phase. </figcaption>
+Figure 1: Enrollment phase.
 
 
 ![Two](https://github.com/user-attachments/assets/3c23273f-babb-4bd5-99bd-0f801da83a2a)
-<figcaption>Figure 2: Authentification phase.</figcaption>
+Figure 2: Authentification phase.
 
 
 ## Repository Contents 
