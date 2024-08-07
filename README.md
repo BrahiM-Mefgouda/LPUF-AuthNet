@@ -8,8 +8,11 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 
 
 
-![One](https://github.com/user-attachments/assets/7fed8979-055b-4589-bb5f-e6dca86458fc)
-**Figure 1:** Enrollment phase.
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/7fed8979-055b-4589-bb5f-e6dca86458fc" alt="One" style="width: 80%;">
+  <br>
+  <figcaption><strong>Figure 1:</strong> Enrollment phase.</figcaption>
+</div>
 
 
 ![Two](https://github.com/user-attachments/assets/3c23273f-babb-4bd5-99bd-0f801da83a2a)
