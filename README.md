@@ -8,18 +8,19 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 
 
 ![One](https://github.com/user-attachments/assets/7fed8979-055b-4589-bb5f-e6dca86458fc)
+<figcaption>Figure 1: Enrollment phase. </figcaption>
 
 ![Two](https://github.com/user-attachments/assets/3c23273f-babb-4bd5-99bd-0f801da83a2a)
+<figcaption>Figure 2: Authentification phase.</figcaption>
 
 
 ## Repository Contents 
-- <code style="color : LightSkyBlue">LPUF-AuthNet-Training.py:</code> Main script for training the LPUF-AuthNet models, inculding the autoencoders, the neural deep networks, and the tandem neural networks. 
+- <code style="color : black">LPUF-AuthNet-Training.py:</code> Main script for training the LPUF-AuthNet models, including the autoencoders, the deep neural networks, and the tandem neural networks.
   
-- <code style="color : LightSkyBlue">LPUF-AuthNet-Models.py:</code> A script contains the definitions of the LPUF-AuthNet models. Specifically, it defines the Deep Neural Networks, the Autoencoders, and the Tandem Neural Networks.
+- <code style="color : black">LPUF-AuthNet-Models.py:</code> A script that contains the definitions of the LPUF-AuthNet models. Specifically, it defines the deep neural networks, autoencoders, and tandem neural networks.
 
-- <code style="color : LightSkyBlue">CRP_FPGA_01 - Copy.csv:</code> An part of the CRP dataset used in the paper. 
-
-
+- <code style="color : black">CRP_FPGA_01 - Copy.csv:</code> A subset of the CRPs dataset utilized in our paper, comprising 10% of the total dataset.
+ 
 
 ## Requirements
 To run the code in this repository, you need the following:
