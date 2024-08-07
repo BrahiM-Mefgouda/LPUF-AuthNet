@@ -46,10 +46,10 @@ To run the code in this repository, you need the following:
 1. Clone the repository:
 
 ```
-git clone https://github.com/yourusername/LPUF-AuthNet.git
-cd LPUF-AuthNet
+git clone https://github.com/yourusername/LPUF-AuthNet-main.git
+cd LPUF-AuthNet-main
 ```
-or donwload the repository from the fellowing link: 
+Or download the repository from the following link: 
 
 ```
 https://github.com/BrahiM-Mefgouda/LPUF-AuthNet/archive/refs/heads/main.zip
