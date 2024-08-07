@@ -8,11 +8,11 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 
 
 
-<div style="text-align: center;">
+<div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
   <img src="https://github.com/user-attachments/assets/7fed8979-055b-4589-bb5f-e6dca86458fc" alt="One" style="width: 80%;">
-  <br>
   <figcaption style="text-align: center;"><strong>Figure 1:</strong> Enrollment phase.</figcaption>
 </div>
+
 
 
 ![Two](https://github.com/user-attachments/assets/3c23273f-babb-4bd5-99bd-0f801da83a2a)
