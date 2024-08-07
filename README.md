@@ -5,7 +5,10 @@ This paper explores the challenges of securing IoT devices, particularly in auth
 
 We investigate physical unclonable functions (PUFs) as robust security solutions, utilizing their inherent physical uniqueness to authenticate devices securely. Our research addresses the limitations of traditional PUF systems, which are vulnerable to machine learning attacks and burdened by large datasets. We propose a novel lightweight PUF mechanism, called 
 <code style="color : black">**LPUF-AuthNet**</code>, which combines <code style="color : black">**tandem neural networks**</code>, <code style="color : black">**Deep neural networks**</code>, and <code style="color : black">**autoencoders**</code> within a <code style="color : black">**split learning framework**</code>. The proposed architecure reduces storage and communication demands, provides mutual authentication, enhances security by resisting different types of attacks, and supports scalable authentication, paving the way for secure integration into future 6G technologies.
+
+
 ![One](https://github.com/user-attachments/assets/7fed8979-055b-4589-bb5f-e6dca86458fc)
+
 ![Two](https://github.com/user-attachments/assets/3c23273f-babb-4bd5-99bd-0f801da83a2a)
 
 
