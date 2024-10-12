@@ -72,7 +72,7 @@ def Training_DNN():
     history = Model1Build.fit(dataNumbers,dataPUF, epochs=500, batch_size=100,  validation_data=(dataNumbers,dataPUF) )
     Model1Build.save('puf_model.h5')
 
-def GenerateChallangeResponse(DataSetofIndex='GeneratorDataset.csv' , model='puf_model.h5'):
+def GenerateChallangeResponse(DataSetofIndex='GeneratorDataset.csv' , model='DNN.h5'):
     model = load_model( model)
     
     #DatasetOfIndex= 'GeneratorDataset.csv'
@@ -89,12 +89,12 @@ def TestTheGeneratio( GeneratedData,OriginalData):
     
 
 def GetDnn(): 
-    model='puf_model.h5'
+    model='DNN.h5'
     return load_model( model)
 
-#Training_DNN()
+Training_DNN()
 data = GenerateChallangeResponse()
 LinkOfDatasetPUF= 'CRP_FPGA_01.csv'
 OriginalData=pd.read_csv(LinkOfDatasetPUF,encoding= 'utf-8')
 
-print (TestTheGeneratio(data,OriginalData ))
+print (f'Accurcy: {TestTheGeneratio(data,OriginalData )[2]}')
