@@ -10,11 +10,11 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 <p align="center">
   <div style="display: flex; justify-content: center; align-items: center; padding: 0 5%;">
     <div style="text-align: center; margin-right: 10px;">
-      <img src="Images/Enrollement_Phase.png" width="100%">
+      <img src="Images/Enrollement_Phase.png" width="23%">
       <p><strong>Figure 1:</strong> Enrollment Phase</p>
     </div>
     <div style="text-align: center;">
-      <img src="Images/Authentication_Phase.png" width="100%">
+      <img src="Images/Authentication_Phase.png" width="23%">
       <p><strong>Figure 2:</strong> Authentication Phase</p>
     </div>
   </div>
