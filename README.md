@@ -35,7 +35,7 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 
 - <code style="color: yellow">DNN.h5</code>: This is the DNN model responsible for generating novel CRPs. The input is a hexadecimal number written in binary format, similar to the dataset, and the model generates the corresponding CRP.
 
-- <code style="color: yellow">best_model.pth</code>: This model contains the $Encoder_1$, $Encoder_2$, and $Decoder_2$. It is the result of training as illustrated in the figure below (Phase A).
+- <code style="color: yellow">**best_model.pth**</code>: This model contains the $Encoder_1$, $Encoder_2$, and $Decoder_2$. It is the result of training as illustrated in the figure below (Phase A).
 
 - <code style="color: yellow">best_model2.pth</code>: This model contains the $Enhanced_Encoder_1$, $Enhanced_Encoder_2$, and $Decoder_1$. It is the result of training as illustrated in the figure below (Phase B).
 
