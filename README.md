@@ -8,7 +8,7 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 
 
 <p align="center">
-  <div style="display: flex; justify-content: center; align-items: center; padding: 0 5%;">
+  <div style="display: flex; justify-content: space-around; align-items: center; padding: 0 5%;">
     <div style="text-align: center; margin-right: 10px;">
       <img src="Images/Enrollement_Phase.png" width="100%">
       <p><strong>Figure 1:</strong> Enrollment Phase</p>
@@ -19,6 +19,8 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
     </div>
   </div>
 </p>
+
+
 
 ## Repository Contents 
 - <code style="color : black">TrainingTNN.py:</code> Main script for training the LPUF-AuthNet models, including the autoencoders, the deep neural networks, and the tandem neural networks.
