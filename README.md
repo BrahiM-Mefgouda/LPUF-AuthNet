@@ -8,51 +8,61 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 
 
 <p align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="Images/Enrollement_Phase.png" width="600px">
-        <p><strong>Figure 1:</strong> Enrollment Phase</p>
-      </td>
-      <td align="center">
-        <img src="Images/Authentication_Phase.png" width="600px">
-        <p><strong>Figure 2:</strong> Authentication Phase</p>
-      </td>
-    </tr>
-  </table>
-</p>
-
-
-
-## Repository Contents 
-- <code style="color : black">TrainingTNN.py:</code> Main script for training the LPUF-AuthNet models, including the autoencoders, the deep neural networks, and the tandem neural networks.
-
-
-- <code style="color : black">LPUF-AuthNet-Models.py:</code> A script that contains the definitions of the LPUF-AuthNet models. Specifically, it defines the deep neural networks, autoencoders, and tandem neural networks.
-
-
-- <code style="color : black">CRP_FPGA_01 - Copy.csv:</code> A subset of the CRPs dataset utilized in our paper, comprising 10% of the total dataset.
- 
-
-- <code style="color : black">GeneratorDataset.csv</code>: A dataset containing binary text that indexes each CRP in the file <code style="color : black">CRP_FPGA_01 - Copy.csv</code>. This file is used to train the CRP generator (DNN).
-
-
-- <code style="color: yellow">DNN.h5</code>: This is the DNN model responsible for generating novel CRPs. The input is a hexadecimal number written in binary format, similar to the dataset, and the model generates the corresponding CRP.
-
-- <code style="color: yellow">**best_model.pth**</code>: This model contains the $Encoder_1$, $Encoder_2$, and $Decoder_2$. It is the result of training as illustrated in the figure below (Phase A).
-
-- <code style="color: yellow">best_model2.pth</code>: This model contains the $Enhanced_Encoder_1$, $Enhanced_Encoder_2$, and $Decoder_1$. It is the result of training as illustrated in the figure below (Phase B).
-
-
-
-<p align="center">
   <div style="display: flex; justify-content: center; align-items: center; padding: 0 5%;">
+    <div style="text-align: center; margin-right: 10px;">
+      <img src="Images/Enrollement_Phase.png" width="100%">
+      <p><strong>Figure 1:</strong> Enrollment Phase</p>
+    </div>
     <div style="text-align: center;">
-      <img src="Images/Training Architecture.png" width="40%">
+      <img src="Images/Authentication_Phase.png" width="100%">
       <p><strong>Figure 2:</strong> Authentication Phase</p>
     </div>
   </div>
 </p>
+
+## Repository Contents 
+### Scripts:  
+- <code style="color : black">**TrainingTNN.py:**</code> Main script for training the LPUF-AuthNet models, including the autoencoders, the deep neural networks, and the tandem neural networks.
+
+
+- <code style="color : black">**LPUF-AuthNet-Models.py:**</code> A script that contains the definitions of the LPUF-AuthNet models. Specifically, it defines the deep neural networks, autoencoders, and tandem neural networks.
+
+- <code style="color : black">**AuthenticationAccuracy.py:**</code> 
+
+- <code style="color : black">MLAttacks.py:</code> 
+
+
+- <code style="color : black">**TestingTNNAccurcy.py:**</code> 
+- <code style="color : black">**TrainingDNN.py:**</code> 
+
+### Trained models: 
+- <code style="color: yellow">**DNN.h5:**</code>: This is the DNN model responsible for generating novel CRPs. The input is a hexadecimal number written in binary format, similar to the dataset, and the model generates the corresponding CRP.
+
+- <code style="color: yellow">**best_model.pth:**</code>: This model contains the $Encoder_1$, $Encoder_2$, and $Decoder_2$. It is the result of training as illustrated in the figure below (Phase A).
+
+- <code style="color: yellow">**best_model2.pth:**</code>: This model contains the $Enhanced_Encoder_1$, $Enhanced_Encoder_2$, and $Decoder_1$. It is the result of training as illustrated in the figure below (Phase B).
+### CSV files: 
+- <code style="color : black">**CRP_FPGA_01 - Copy.csv:**</code> A subset of the CRPs dataset utilized in our paper, comprising 10% of the total dataset.
+ 
+
+- <code style="color : black">**GeneratorDataset.csv:**</code>: A dataset containing binary text that indexes each CRP in the file <code style="color : black">CRP_FPGA_01 - Copy.csv</code>. This file is used to train the CRP generator (DNN).
+
+
+- <code style="color : black">**MLAttackDataset.csv**</code>: A dataset containing binary text that indexes each CRP in the file <code style="color : black">CRP_FPGA_01 - Copy.csv</code>. This file is used to train the CRP generator (DNN).
+
+
+- <code style="color : black">**accuracy_results2.pkl**</code>:
+
+<p align="center">
+  <div style="display: flex; justify-content: center; align-items: center; padding: 0 5%;">
+    <div style="text-align: center;">
+      <img src="Figures/Training Architecture.png" width="40%">
+      <p><strong>Figure 2:</strong> Training Architecture</p>
+    </div>
+  </div>
+</p>
+
+
 
 ## Requirements
 To run the code in this repository, you need the following:
