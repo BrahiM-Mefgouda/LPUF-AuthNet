@@ -149,6 +149,10 @@ def AccurcyOfFirstTraining():
     
     
     checkpoint = torch.load('best_model.pth')
+    encoder1 = LPUFAuthnetDefinition.Encoder1()
+    encoder2 = LPUFAuthnetDefinition.Encoder2()
+    decoder2 = LPUFAuthnetDefinition.Decoder2 ()
+    checkpoint = torch.load('best_model.pth')
 
     encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
@@ -157,13 +161,35 @@ def AccurcyOfFirstTraining():
     encoder1.eval()
     encoder2.eval()
     decoder2.eval()
-
     
+    original_encoder1 = LPUFAuthnetDefinition.Encoder1()
+    original_encoder2 = LPUFAuthnetDefinition.Encoder2()
+
+
+    checkpoint = torch.load('best_model.pth')
+    original_encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
+    original_encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
+
+    # Create enhanced encoders
+    enhanced_encoder1 = LPUFAuthnetDefinition.FrozenEncoder1(original_encoder1)
+    enhanced_encoder2 = LPUFAuthnetDefinition.FreezedEncoder2(original_encoder2)
+    decoder1 = LPUFAuthnetDefinition.Decoder1()
+    
+    # Load the trained weights for enhanced encoders and decoder
+    checkpoint2 = torch.load('best_model2.pth')
+
+    enhanced_encoder2.load_state_dict(checkpoint2['encoder2_state_dict'])
+    decoder1.load_state_dict(checkpoint2['decoder2_state_dict'])
+    
+    enhanced_encoder1.eval()
+    enhanced_encoder2.eval()
+    decoder1.eval()
+
     XTrainData_tensor = torch.FloatTensor(XTrainData.values)
     
     with torch.no_grad():
-        encoded_output = encoder1(XTrainData_tensor)
-        encoded_output = encoder2(encoded_output)
+        encoded_output = enhanced_encoder1(XTrainData_tensor)
+        encoded_output = enhanced_encoder2(encoded_output)
         encoded_output = decoder2(encoded_output)
 
     encoded_output = encoded_output.squeeze().round()
