@@ -17,7 +17,6 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import  LPUFAuthnetDefinition
-import ZadiGeneratingDatasetForMLattack
 import os
 from sklearn import svm
 from sklearn.multioutput import MultiOutputRegressor
@@ -37,7 +36,7 @@ import seaborn as sns
 
 # Load the data
 
-data = pd.read_csv('CRP_FPGA_01 - copy.csv')
+data = pd.read_csv('Datasets/CRP_FPGA_01 - copy.csv')
 X = data.iloc[:, :32].values  # Challenges
 y = data.iloc[:, 32:].values  # Responses
 
@@ -64,7 +63,7 @@ def GeneratingLatentSpaceDataset():
     
     
        
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
     original_encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     original_encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
 
@@ -74,7 +73,7 @@ def GeneratingLatentSpaceDataset():
     decoder1 = LPUFAuthnetDefinition.Decoder1()
     
     # Load the trained weights for enhanced encoders and decoder
-    checkpoint2 = torch.load('best_model2.pth')
+    checkpoint2 = torch.load('Trained models/best_model2.pth')
 
     enhanced_encoder2.load_state_dict(checkpoint2['encoder2_state_dict'])
     decoder1.load_state_dict(checkpoint2['decoder2_state_dict'])
@@ -94,8 +93,8 @@ def GeneratingLatentSpaceDataset():
     Y_np = LatentResponse.numpy()
     latent_df = pd.DataFrame(np.hstack([X_np, Y_np]))
     
-    latent_df.to_csv('MLAttackDataset.csv', index=False)
-    print("Dataset created and saved as 'MLAttackDataset.csv'")
+    latent_df.to_csv('Datasets/MLAttackDataset.csv', index=False)
+    print("Dataset created and saved as 'Datasets/MLAttackDataset.csv'")
 
 
 
@@ -286,7 +285,7 @@ class NN(nn.Module):
         total_flipped_bits_ten_perc_cent /= num_pairs
         return average_flipped, total_flipped_bits_ten_perc_cent, accuracy
 
-def save_accuracies(AccuracySVM, AccuracyNN, filename='accuracy_results2.pkl'):
+def save_accuracies(AccuracySVM, AccuracyNN, filename='Trained models/accuracy_results2.pkl'):
     with open(filename, 'wb') as f:
         pickle.dump({
             'SVR': AccuracySVM,
@@ -305,7 +304,7 @@ def load_accuracies(filename='accuracy_results2'):
 
 
 def AttackVPUF():
-    data = pd.read_csv('MLAttackDataset.csv')
+    data = pd.read_csv('Datasets/MLAttackDataset.csv')
     
     AccVPUF= []
     X = data.iloc[:, :4].values  # Challenges
@@ -319,7 +318,7 @@ def AttackVPUF():
     original_encoder1 = LPUFAuthnetDefinition.Encoder1()
     original_encoder2 = LPUFAuthnetDefinition.Encoder2()
     
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
     original_encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     original_encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
     
@@ -329,7 +328,7 @@ def AttackVPUF():
     decoder1 = LPUFAuthnetDefinition.Decoder1()
     
     # Load the trained weights for enhanced encoders and decoder
-    checkpoint2 = torch.load('best_model2.pth')
+    checkpoint2 = torch.load('Trained models/best_model2.pth')
     enhanced_encoder2.load_state_dict(checkpoint2['encoder2_state_dict'])
     decoder1.load_state_dict(checkpoint2['decoder2_state_dict'])
     
@@ -355,7 +354,7 @@ def AttackVPUF():
 
 
 def Attack() : 
-    data = pd.read_csv('MLAttackDataset.csv')
+    data = pd.read_csv('Datasets/MLAttackDataset.csv')
     
     X= data.iloc[: , :4].values  # Challenges
     y= data.iloc[:  , 4:].values  # Responses
@@ -376,7 +375,7 @@ def Attack() :
     accuracy = calculate_accuracy(y_test, y_pred, tolerance=1)
     print(f"Accuracy (within 0.1 tolerance): {accuracy:.4f}")
     #GeneratingDataSet()  
-    data = pd.read_csv('MLAttackDataset.csv')
+    data = pd.read_csv('Datasets/MLAttackDataset.csv')
     
     NeuralNetworkModel = NN()
     NeuralNetworkModel_optimizer = optim.Adam(NeuralNetworkModel.parameters(), lr=0.001)
@@ -443,7 +442,7 @@ def Attack() :
     
     save_accuracies(AccurcySVM, AccuracyNN)
 
-def load_accuracies(filename='accuracy_results2.pkl'):
+def load_accuracies(filename='Trained models/accuracy_results2.pkl'):
     with open(filename, 'rb') as f:
         loaded_results = pickle.load(f)
         
@@ -509,7 +508,7 @@ def PlotAcc(loaded_AccuracySVM, loaded_AccuracyNN, loaded_AccuracyVPUF):
     
     # Adjust layout and save the plot
     plt.tight_layout()
-    plt.savefig('accuracy_comparison_dark_axes.pdf', dpi=300, bbox_inches='tight', facecolor='white')
+    plt.savefig('Figures/accuracy_comparison_dark_axes.pdf', dpi=300, bbox_inches='tight', facecolor='white')
     
     # Display the plot
     plt.show()

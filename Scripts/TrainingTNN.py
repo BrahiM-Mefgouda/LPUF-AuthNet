@@ -132,7 +132,7 @@ class PUFTrainer:
                     'decoder2_optimizer_state_dict': decoder2_optimizer.state_dict(),
                     'loss': avg_loss,
                     'accuracy': best_acc,
-                }, 'best_model.pth')
+                }, 'Trained models/best_model.pth')
 
         training_time = time.time() - start_time
         print(f"Autoencoder training took {training_time:.2f} seconds")
@@ -144,7 +144,7 @@ class PUFTrainer:
         original_encoder1 = Models.Encoder1().to(self.device)
         original_encoder2 = Models.Encoder2().to(self.device)
 
-        checkpoint = torch.load('best_model.pth')
+        checkpoint = torch.load('Trained models/best_model.pth')
         original_encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
         original_encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
 
@@ -217,7 +217,7 @@ class PUFTrainer:
                     'decoder1_optimizer_state_dict': decoder1_optimizer.state_dict(),
                     'loss': avg_loss,
                     'accuracy': best_acc,
-                }, 'best_model2.pth')
+                }, 'Trained models/best_model2.pth')
 
         print(f"Best accuracy: {best_acc:.2f}% achieved at epoch {best_epoch}")
         self.plot_training_results(losses, accuracies)
@@ -244,7 +244,7 @@ class PUFTrainer:
 
 def main():
     num_epochs= 2^37
-    trainer = PUFTrainer('CRP_FPGA_01 - Copy.csv')
+    trainer = PUFTrainer('Datasets/CRP_FPGA_01 - Copy.csv')
     trainer.train_first_stage(num_epochs)
     trainer.train_second_stage(num_epochs)
 

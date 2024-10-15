@@ -35,7 +35,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def plot_confusion_matrix(tp, fp, fn, tn, filename="MatrixOfConfusion.pdf"):
+def plot_confusion_matrix(tp, fp, fn, tn, filename="Figures/MatrixOfConfusion.pdf"):
     """
     Plot a confusion matrix and save it as a PDF file.
     
@@ -76,7 +76,7 @@ def plot_confusion_matrix(tp, fp, fn, tn, filename="MatrixOfConfusion.pdf"):
     plt.close()  # Close the figure to free up memory
 
 # Load data
-LinkOfDataset = 'CRP_FPGA_01 - Copy.csv'
+LinkOfDataset = 'Datasets/CRP_FPGA_01 - Copy.csv'
 data = pd.read_csv(LinkOfDataset, encoding='utf-8')
 
 
@@ -148,11 +148,11 @@ def AccurcyOfFirstTraining():
     decoder2 = LPUFAuthnetDefinition.Decoder2 ()
     
     
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
     encoder1 = LPUFAuthnetDefinition.Encoder1()
     encoder2 = LPUFAuthnetDefinition.Encoder2()
     decoder2 = LPUFAuthnetDefinition.Decoder2 ()
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
 
     encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
@@ -166,7 +166,7 @@ def AccurcyOfFirstTraining():
     original_encoder2 = LPUFAuthnetDefinition.Encoder2()
 
 
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
     original_encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     original_encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
 
@@ -176,7 +176,7 @@ def AccurcyOfFirstTraining():
     decoder1 = LPUFAuthnetDefinition.Decoder1()
     
     # Load the trained weights for enhanced encoders and decoder
-    checkpoint2 = torch.load('best_model2.pth')
+    checkpoint2 = torch.load('Trained models/best_model2.pth')
 
     enhanced_encoder2.load_state_dict(checkpoint2['encoder2_state_dict'])
     decoder1.load_state_dict(checkpoint2['decoder2_state_dict'])
@@ -223,7 +223,7 @@ def AccuracyOfEnhancedTraining():
     
     
        
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
     original_encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     original_encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
 
@@ -233,7 +233,7 @@ def AccuracyOfEnhancedTraining():
     decoder1 = LPUFAuthnetDefinition.Decoder1()
     
     # Load the trained weights for enhanced encoders and decoder
-    checkpoint2 = torch.load('best_model2.pth')
+    checkpoint2 = torch.load('Trained models/best_model2.pth')
 
     enhanced_encoder2.load_state_dict(checkpoint2['encoder2_state_dict'])
     decoder1.load_state_dict(checkpoint2['decoder2_state_dict'])
@@ -266,14 +266,14 @@ def AuthenticationAccurcyTest():
     XTrainData = TrainData.iloc[:, :ChallengeLen]
     YTrainData = TrainData.iloc[:, ChallengeLen:ChallengeLen]
 
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
 
     encoder1 = LPUFAuthnetDefinition.Encoder1()
     encoder2 = LPUFAuthnetDefinition.Encoder2()
     decoder2 = LPUFAuthnetDefinition.Decoder2 ()
     
     
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
 
     encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
@@ -287,7 +287,7 @@ def AuthenticationAccurcyTest():
     original_encoder2 = LPUFAuthnetDefinition.Encoder2()
 
 
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
     original_encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     original_encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
 
@@ -297,7 +297,7 @@ def AuthenticationAccurcyTest():
     decoder1 = LPUFAuthnetDefinition.Decoder1()
     
     # Load the trained weights for enhanced encoders and decoder
-    checkpoint2 = torch.load('best_model2.pth')
+    checkpoint2 = torch.load('Trained models/best_model2.pth')
 
     enhanced_encoder2.load_state_dict(checkpoint2['encoder2_state_dict'])
     decoder1.load_state_dict(checkpoint2['decoder2_state_dict'])

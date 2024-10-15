@@ -36,7 +36,7 @@ import LPUFAuthnetDefinition as  ZadiDefinition
 
 
 # Load data
-LinkOfDataset = 'CRP_FPGA_01 - Copy.csv'
+LinkOfDataset = 'Datasets/CRP_FPGA_01 - Copy.csv'
 data = pd.read_csv(LinkOfDataset, encoding='utf-8')
 
 
@@ -77,7 +77,7 @@ def AccurcyOfFirstTraining():
     decoder2 = ZadiDefinition.Decoder2 ()
     
     
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
 
     encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
@@ -126,7 +126,7 @@ def AccuracyOfEnhancedTraining():
     
     
        
-    checkpoint = torch.load('best_model.pth')
+    checkpoint = torch.load('Trained models/best_model.pth')
     original_encoder1.load_state_dict(checkpoint['encoder1_state_dict'])
     original_encoder2.load_state_dict(checkpoint['encoder2_state_dict'])
 
@@ -136,7 +136,7 @@ def AccuracyOfEnhancedTraining():
     decoder1 = ZadiDefinition.Decoder1()
     
     # Load the trained weights for enhanced encoders and decoder
-    checkpoint2 = torch.load('best_model2.pth')
+    checkpoint2 = torch.load('Trained models/best_model2.pth')
 
     enhanced_encoder2.load_state_dict(checkpoint2['encoder2_state_dict'])
     decoder1.load_state_dict(checkpoint2['decoder2_state_dict'])

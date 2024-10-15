@@ -43,9 +43,9 @@ def average_flipped_bits_and_accuracy(X, Y):
 #%% Load data sss
 
 def Training_DNN():        
-    LinkOfDatasetPUF= 'CRP_FPGA_01.csv'
+    LinkOfDatasetPUF= 'Datasets/CRP_FPGA_01.csv'
     dataPUF=pd.read_csv(LinkOfDatasetPUF,encoding= 'utf-8')
-    LinkOfDatasetNumbers= 'GeneratorDataset.csv'
+    LinkOfDatasetNumbers= 'Datasets/GeneratorDataset.csv'
     dataNumbers=pd.read_csv(LinkOfDatasetNumbers,encoding= 'utf-8')
     n_inputs   = 36 
     n_outputs  = 48
@@ -70,12 +70,12 @@ def Training_DNN():
     
     
     history = Model1Build.fit(dataNumbers,dataPUF, epochs=500, batch_size=100,  validation_data=(dataNumbers,dataPUF) )
-    Model1Build.save('puf_model.h5')
+    Model1Build.save('Trained models/puf_model.h5')
 
-def GenerateChallangeResponse(DataSetofIndex='GeneratorDataset.csv' , model='DNN.h5'):
+def GenerateChallangeResponse(DataSetofIndex='Datasets/GeneratorDataset.csv' , model='Trained models/DNN.h5'):
     model = load_model( model)
     
-    #DatasetOfIndex= 'GeneratorDataset.csv'
+    #DatasetOfIndex= 'Datasets/GeneratorDataset.csv'
     DataSetofIndex=pd.read_csv(DataSetofIndex,encoding= 'utf-8')
     #LinkOfDatasetPUF= 'CRP_FPGA_01.csv'
     DataSetofIndex= np.array(DataSetofIndex)
@@ -89,12 +89,12 @@ def TestTheGeneratio( GeneratedData,OriginalData):
     
 
 def GetDnn(): 
-    model='DNN.h5'
+    model='Trained models/DNN.h5'
     return load_model( model)
 
 Training_DNN()
 data = GenerateChallangeResponse()
-LinkOfDatasetPUF= 'CRP_FPGA_01.csv'
+LinkOfDatasetPUF= 'Datasets/CRP_FPGA_01.csv'
 OriginalData=pd.read_csv(LinkOfDatasetPUF,encoding= 'utf-8')
 
 print (f'Accurcy: {TestTheGeneratio(data,OriginalData )[2]}')
