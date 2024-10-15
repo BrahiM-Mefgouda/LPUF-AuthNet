@@ -11,26 +11,52 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
   <table>
     <tr>
       <td align="center">
-        <img src="Images/Enrollement_Phase.png" width="600px">
+        <img src="Figures/Enrollement_Phase.png" width="600px">
         <p><strong>Figure 1:</strong> Enrollment Phase</p>
       </td>
       <td align="center">
-        <img src="Images/Authentication_Phase.png" width="600px">
+        <img src="Figures/Authentication_Phase.png" width="600px">
         <p><strong>Figure 2:</strong> Authentication Phase</p>
       </td>
     </tr>
   </table>
 </p>
+
+
 ## Repository Contents 
+
+This repository hosts the source code for developing and implementing a neural network project aimed at secure wireless IoT mesh networks. It comprises two main folders, organized as shown in the following hierarchy: 
+
+    .
+    ├── Scripts                  
+    │   ├── TrainingTNN.py
+    │   ├── LPUF-AuthNet-Models.py
+    │   ├── AuthenticationAccuracy.py
+    │   ├── AuthenticationAccuracy.py
+    │   ├── MLAttacks.py
+    ├── Trained models
+    │   ├── DNN.h5
+    │   ├── best_model.pth
+    │   ├── best_model2.pth
+    ├── Dataset
+    │   ├── CRP_FPGA_01 - Copy.csv
+    │   ├── GeneratorDataset.csv
+    │   ├── MLAttackDataset.csv
+    │   ├──accuracy_results2.pkl
+    ├── Figures                   
+    │   ├── Authentication_Phase.png
+    │   ├── Enrollement_Phase.png
+    │   ├── Training Architecture.png
+
 ### Scripts:  
 - <code style="color : black">**TrainingTNN.py:**</code> Main script for training the LPUF-AuthNet models, including the autoencoders, the deep neural networks, and the tandem neural networks.
 
 
 - <code style="color : black">**LPUF-AuthNet-Models.py:**</code> A script that contains the definitions of the LPUF-AuthNet models. Specifically, it defines the deep neural networks, autoencoders, and tandem neural networks.
 
-- <code style="color : black">**AuthenticationAccuracy.py:**</code> 
+- <code style="color : black">**AuthenticationAccuracy.py:**</code> This script used to calculate the latent challenge authentication accuracy.  
 
-- <code style="color : black">MLAttacks.py:</code> 
+- <code style="color : black">MLAttacks.py:</code> This script is to training the ML adversary models, including SVM and NN and compare the accurcy of predicting the LR of the corresponding LC.  
 
 
 - <code style="color : black">**TestingTNNAccurcy.py:**</code> 
@@ -54,15 +80,19 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 
 - <code style="color : black">**accuracy_results2.pkl**</code>:
 
-<p align="center">
-  <div style="display: flex; justify-content: center; align-items: center; padding: 0 5%;">
-    <div style="text-align: center;">
-      <img src="Figures/Training Architecture.png" width="40%">
-      <p><strong>Figure 2:</strong> Training Architecture</p>
-    </div>
-  </div>
-</p>
 
+
+
+<p align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="Figures/Training Architecture.png" width="300px">
+        <p><strong>Figure 2:</strong> Enrollment Phase</p>
+      </td>
+    </tr>
+  </table>
+</p>
 
 
 ## Requirements
