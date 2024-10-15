@@ -25,7 +25,7 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 
 ## Repository Contents 
 
-This repository hosts the source code for developing and implementing a neural network project aimed at secure wireless IoT mesh networks. It comprises two main folders, organized as shown in the following hierarchy: 
+This repository comprises four main folders, organized as shown in the following hierarchy: 
 
     .
     ├── Scripts                  
@@ -42,43 +42,41 @@ This repository hosts the source code for developing and implementing a neural n
     │   ├── CRP_FPGA_01 - Copy.csv
     │   ├── GeneratorDataset.csv
     │   ├── MLAttackDataset.csv
-    │   ├──accuracy_results2.pkl
     ├── Figures                   
     │   ├── Authentication_Phase.png
     │   ├── Enrollement_Phase.png
     │   ├── Training Architecture.png
 
 ### Scripts:  
-- <code style="color : black">**TrainingTNN.py:**</code> Main script for training the LPUF-AuthNet models, including the autoencoders, the deep neural networks, and the tandem neural networks.
+- <code style="color: black">TrainingTNN.py:</code> This is the main script for training the LPUF-AuthNet models. It is used to train the $Encoder_1$, $Decoder_1$, $Encoder_2$, $Decoder_2$, enhanced $Encoder_1$, and enhanced $Encoder_2$. The trained models are saved as best_model.pth and best_model2.pth in the Trained Models directory.
 
+- <code style="color: black">LPUF-AuthNet-Models.py:</code> This script contains the definitions of the LPUF-AuthNet models.
 
-- <code style="color : black">**LPUF-AuthNet-Models.py:**</code> A script that contains the definitions of the LPUF-AuthNet models. Specifically, it defines the deep neural networks, autoencoders, and tandem neural networks.
+- <code style="color: black">AuthenticationAccuracy.py:</code> This script evaluates the model in terms of latent challenge authentication accuracy.
 
-- <code style="color : black">**AuthenticationAccuracy.py:**</code> This script used to calculate the latent challenge authentication accuracy.  
+- <code style="color: black">MLAttacks.py:</code> This script is used for training adversarial machine learning models, including SVM and NN, and compares their accuracy in predicting the likelihood ratio (LR) of the corresponding latent challenge (LC).
 
-- <code style="color : black">MLAttacks.py:</code> This script is to training the ML adversary models, including SVM and NN and compare the accurcy of predicting the LR of the corresponding LC.  
+- <code style="color: black">TestingTNNAccuracy.py:</code> This script evaluates the accuracy of the TNN models, including $Encoder_1$, $Decoder_1$, $Encoder_2$, $Decoder_2$, enhanced $Encoder_1$, and enhanced $Encoder_2$.
 
+- <code style="color: black">TrainingDNN.py:</code> This script is used to train the CRP generator.
 
-- <code style="color : black">**TestingTNNAccurcy.py:**</code> 
-- <code style="color : black">**TrainingDNN.py:**</code> 
 
 ### Trained models: 
-- <code style="color: yellow">**DNN.h5:**</code>: This is the DNN model responsible for generating novel CRPs. The input is a hexadecimal number written in binary format, similar to the dataset, and the model generates the corresponding CRP.
+- **DNN.h5**: A Deep Neural Network model designed to generate novel Challenge-Response Pairs (CRPs). It accepts a hexadecimal number in binary format as input and produces a CRP as output. This model is trained using the `TrainingDNN.py` script.
 
-- <code style="color: yellow">**best_model.pth:**</code>: This model contains the $Encoder_1$, $Encoder_2$, and $Decoder_2$. It is the result of training as illustrated in the figure below (Phase A).
+- **best_model.pth**: This model encompasses $$Encoder_1$$, $$Encoder_2$$, and $$Decoder_2$$. It is the outcome of the training process illustrated in Phase A of the figure below.
 
-- <code style="color: yellow">**best_model2.pth:**</code>: This model contains the $Enhanced_Encoder_1$, $Enhanced_Encoder_2$, and $Decoder_1$. It is the result of training as illustrated in the figure below (Phase B).
+- **best_model2.pth**: This model includes $$Enhanced\_Encoder_1$$, $$Enhanced\_Encoder_2$$, and $$Decoder_1$$. It results from the training process depicted in Phase B of the figure below.
+
+- **accuracy_results2.pkl**: A pickle file that stores the predictions of the Machine Learning adversary, facilitating the plotting of results.
+
 ### CSV files: 
 - <code style="color : black">**CRP_FPGA_01 - Copy.csv:**</code> A subset of the CRPs dataset utilized in our paper, comprising 10% of the total dataset.
- 
 
 - <code style="color : black">**GeneratorDataset.csv:**</code>: A dataset containing binary text that indexes each CRP in the file <code style="color : black">CRP_FPGA_01 - Copy.csv</code>. This file is used to train the CRP generator (DNN).
 
-
 - <code style="color : black">**MLAttackDataset.csv**</code>: A dataset containing binary text that indexes each CRP in the file <code style="color : black">CRP_FPGA_01 - Copy.csv</code>. This file is used to train the CRP generator (DNN).
 
-
-- <code style="color : black">**accuracy_results2.pkl**</code>:
 
 
 
