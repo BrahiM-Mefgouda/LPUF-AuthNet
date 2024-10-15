@@ -70,7 +70,7 @@ This repository is organized as follows:
 ### Trained models: 
 - `DNN.h5`: A Deep Neural Network model designed to generate novel Challenge-Response Pairs (CRPs). It accepts a hexadecimal number in binary format as input and produces a CRP as output. This model is trained using the `TrainingDNN.py` script.
 
-- `best_model.pth`: This model encompasses $Encoder_1$, $Encoder_2$, and $$Decoder_2$$. It is the outcome of the training process illustrated in Phase A of the figure below.
+- `best_model.pth`: This model encompasses $Encoder_1$, $Encoder_2$, and $Decoder_2$. It is the outcome of the training process illustrated in Phase A of the figure below.
 
 - `best_model2.pth`: This model includes $Enhanced\_Encoder_1$, $Enhanced\_Encoder_2$, and $Decoder_1$. It results from the training process depicted in Phase B of the figure below.
 
@@ -166,9 +166,9 @@ LPUF-AuthNet is structured around key modules: the training of TNN blocks and DN
 </p>
 
 2. **Data Transmission Overhead**:
-   - We evaluated the system using 10⁴ LCs, derived from the collected dataset and processed through $$Decoder_1$$.
+   - We evaluated the system using 10⁴ LCs, derived from the collected dataset and processed through $Decoder_1$.
    - Concurrently, we generated random fake LCs for comparative analysis.
-   - Results demonstrate the exceptional accuracy of the $$TNN_2$$ in discriminating between authentic and fake challenges:
+   - Results demonstrate the exceptional accuracy of the $TNN_2$ in discriminating between authentic and fake challenges:
      - 100% detection rate for correct LCs
      - 99.99% detection rate for fake LCs
    - This validates the robustness of the system in maintaining secure authentication protocols.
@@ -181,7 +181,7 @@ LPUF-AuthNet is structured around key modules: the training of TNN blocks and DN
   <strong>Figure 5:</strong> Confusion matrix for LC authentication accuracy
 </p>
 
-3. **Implementing the LPUF-AuthNet Protocol in Real Environments**:
+1. **Implementing the LPUF-AuthNet Protocol in Real Environments**:
    - Please check back later for updates on this section.
 
 
