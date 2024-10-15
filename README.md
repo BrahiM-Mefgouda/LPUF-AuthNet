@@ -11,11 +11,11 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
   <table>
     <tr>
       <td align="center">
-        <img src="Figures/Enrollement_Phase.png" width="600px">
+        <img src="Figures/Enrollement_Phase.png" width="800px">
         <p><strong>Figure 1:</strong> Enrollment Phase</p>
       </td>
       <td align="center">
-        <img src="Figures/Authentication_Phase.png" width="600px">
+        <img src="Figures/Authentication_Phase.png" width="800px">
         <p><strong>Figure 2:</strong> Authentication Phase</p>
       </td>
     </tr>
@@ -79,19 +79,12 @@ This repository comprises four main folders, organized as shown in the following
 
 
 
-
-
 <p align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="Figures/Training Architecture.png" width="300px">
-        <p><strong>Figure 2:</strong> Enrollment Phase</p>
-      </td>
-    </tr>
-  </table>
+  <img src="Figures/Training Architecture.png" width="300">
+<p align="center">
+  <strong>Figure 2:</strong> Enrollment Phase
 </p>
-
+</p>
 
 ## Requirements
 To run the code in this repository, you need the following:
