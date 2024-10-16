@@ -8,7 +8,7 @@ We investigate physical unclonable functions (PUFs) as robust security solutions
 
 We propose a novel lightweight PUF authentication scheme termed **LPUF-AuthNet**, which comprises two ML models:
 - **Deep Neural Networks (DNN)**: This model is designed to accurately reproduce the original CRPs collected from a hardware PUF while significantly reducing storage requirements.
-- **Tandem Neural Networks (TNN)**: This model is composed of two collaborative blocks: TNN$_1$ and TNN$_2$, where each block is composed of an encoder and a decoder. TNN$_1$ operates on the verifier, which is responsible for validating the legitimacy of the responses.  In parallel, TNN$_2$ is implemented on the legitimate nodes, where it verifies the authenticity of incoming challenges. 
+- **Tandem Neural Networks (TNN)**: This model is composed of two collaborative blocks: $TNN$_1$ and TNN$_2$, where each block is composed of an encoder and a decoder. $TNN$_1$ operates on the verifier, which is responsible for validating the legitimacy of the responses.  In parallel, $TNN$_2$ is implemented on the legitimate nodes, where it verifies the authenticity of incoming challenges. 
 
 
 These models are trained using the **Split Learning (SL)** paradigm. The proposed architecture:
