@@ -7,8 +7,9 @@ This research addresses the challenges of securing IoT devices, particularly in 
 We investigate physical unclonable functions (PUFs) as robust security solutions, utilizing their inherent physical uniqueness to authenticate devices securely. Our research addresses the limitations of traditional PUF systems, which are vulnerable to machine learning attacks and burdened by large datasets.
 
 We propose a novel lightweight PUF authentication scheme termed **LPUF-AuthNet**, which comprises two ML models:
-- **Deep Neural Networks (DNN)**
-- **Tandem Neural Networks (TNN)**
+- **Deep Neural Networks (DNN)**: This model is designed to accurately reproduce the original CRPs collected from a hardware PUF while significantly reducing storage requirements.
+- **Tandem Neural Networks (TNN)**: This model is composed of two collaborative blocks: TNN$_1$ and TNN$_2$, where each block is composed of an encoder and a decoder. TNN$_1$ operates on the verifier, which is responsible for validating the legitimacy of the responses.  In parallel, TNN$_2$ is implemented on the legitimate nodes, where it verifies the authenticity of incoming challenges. 
+
 
 These models are trained using the **Split Learning (SL)** paradigm. The proposed architecture:
 - Reduces storage and communication demands
@@ -24,7 +25,7 @@ This approach paves the way for secure integration into future 6G technologies.
 <p align="center">
   <img src="Figures/Enrollement_Phase.png" width="49%" alt="Enrollment Phase">
   <img src="Figures/Authentication_Phase.png" width="49%" alt="Authentication Phase">
-  <strong>Figure 1:</strong> Enrollment Phase &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Figure 2:</strong> Authentication Phase
+  <strong>Figure 1:</strong> Enrollment Phase &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Figure 2:</strong> Authentication Phase
 </p>
 
 
@@ -181,17 +182,12 @@ LPUF-AuthNet is structured around key modules: the training of TNN blocks and DN
   <strong>Figure 5:</strong> Confusion matrix for LC authentication accuracy
 </p>
 
-1. **Implementing the LPUF-AuthNet Protocol in Real Environments**:
+3. **Implementing the LPUF-AuthNet Protocol in Real Environments**:
    - Please check back later for updates on this section.
 
 
 ## **Copyright and license**
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 
 ## **Citation**
 If you use LPUF-AuthNet in your research or development, please cite it as follows:
-
-
-
