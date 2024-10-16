@@ -96,6 +96,8 @@ This repository is organized as follows:
 ## Requirements
 To run the code in this repository, you need the following:
 
+- Tensorflow 2.5.0 or higher
+- Keras 2.4.3 or higher
 - Python 3.7 or higher
 - PyTorch 1.8.0 or higher
 - NumPy 1.19.0 or higher
