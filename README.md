@@ -93,7 +93,7 @@ This repository is organized as follows:
 </p>
 </p>
 
-## **Requirements**
+## Requirements
 To run the code in this repository, you need the following:
 
 - Python 3.7 or higher
@@ -105,7 +105,7 @@ To run the code in this repository, you need the following:
 
 It's recommended to use a virtual environment to avoid conflicts with other projects.
 
-## **Installation** 
+## Installation 
 1. Clone the repository:
 
 ```
@@ -186,8 +186,13 @@ LPUF-AuthNet is structured around key modules: the training of TNN blocks and DN
    - Please check back later for updates on this section.
 
 
-## **Copyright and license**
+## Copyright and license
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## **Citation**
+
+## Copyright and license
+For any questions or issues, please contact me at brahim.mefgouda@ku.ac.ae or brahim.mefgouda@ieee.org.
+
+
+## Citation
 If you use LPUF-AuthNet in your research or development, please cite it as follows:
