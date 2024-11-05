@@ -199,11 +199,11 @@ For any questions or issues, please contact me at brahim.mefgouda@ku.ac.ae or br
 ## Citation
 If you use LPUF-AuthNet in your research or development, please cite it as follows:
 
-'''
+```
 @article{mefgouda2024lpuf,
   title={LPUF-AuthNet: A Lightweight PUF-Based IoT Authentication via Tandem Neural Networks and Split Learning},
   author={Mefgouda, Brahim and Khan, Raviha and Alhussein, Omar and Saleh, Hani and Eldeeb, Hossien B and Pandey, Anshul and Muhaidat, Sami},
   journal={arXiv preprint arXiv:2410.12190},
   year={2024}
 }
-'''
+```
